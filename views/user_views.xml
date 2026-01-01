@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View Inheritance -->
+    <record id="view_users_form_inherit" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.ssn</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <!-- Add SSN field after the 'name' field -->
+            <xpath expr="//field[@name='name']" position="after">
+
+                <label for="login" string='Social Security Number'/>
+                <h2>
+                    <field name="ssn" widget="mask" options="{'mask': '000-00-0000'}"/>
+                </h2>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Tree/List View Inheritance -->
+    <record id="view_users_tree_inherit" model="ir.ui.view">
+        <field name="name">res.users.tree.inherit.ssn</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <!-- Add SSN column to the tree view -->
+            <xpath expr="//field[@name='login']" position="after">
+                <field name="ssn" string='Social Security Number' widget="mask"
+                       options="{'mask': '000-00-0000'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
