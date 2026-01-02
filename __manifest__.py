@@ -11,8 +11,8 @@
         - Validates SSN format (exactly 12 digits)
         - Provides masked input for better UX
     """,
-    'author': 'Your Company',
-    'website': 'https://www.yourcompany.com',
+    'author': 'abdelghani Company',
+    'website': 'https://www.abdelghani.com',
     'depends': ['base'],
     'data': [
         'views/user_views.xml',
